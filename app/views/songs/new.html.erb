@@ -1,5 +1,9 @@
 <h1>Song Form</h1>
 
+<!--
+<%= render 'form' %>
+-->
+
 <% if @song.errors.any? %>
     <div id="error_explanation"
         <h3>
@@ -15,20 +19,32 @@
 <% end %>
 
 <%= form_for @song do |f| %>
-    <%= f.label :title %>
-    <%= f.text_field :title %><br />
+    <div class="field">
+        <%= f.label :title %>
+        <%= f.text_field :title %><br />
+    </div>
 
-    <%= f.label :release_year %>
-    <%= f.text_field :release_year %><br />
+    <div class="field">
+        <%= f.label :released %>
+        <%= f.check_box :released %><br />
+    </div>
 
-    <%= f.label :released %>
-    <%= f.check_box :released %><br />
+    <div class="field">
+        <%= f.label :release_year %>
+        <%= f.number_field :release_year %><br />
+    </div>
 
-    <%= f.label :genre %>
-    <%= f.text_field :genre %><br />
+    <div class="field">
+        <%= f.label :genre %>
+        <%= f.text_field :genre %><br />
+    </div>
 
-    <%= f.label :artist_name %>
-    <%= f.text_field :artist_name %><br />
+    <div class="field">
+        <%= f.label :artist_name %>
+        <%= f.text_field :artist_name %><br />
+    </div>
 
-    <%= f.submit %>
+    <div class="actions">
+        <%= f.submit %>
+    </div>
 <% end %>

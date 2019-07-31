@@ -2,7 +2,14 @@
 <div>
 Artist: <%= @song.artist_name %><br />
 Genre: <%= @song.genre %><br />
-Released: <%= @song.released %>
+Released: <%= @song.released %><br />
+<% if @song.released? %>
+Release Year: <%= @song.release_year %>
+<% end %>
+</div>
+
+<div>
+<%= link_to "Edit", edit_song_path(@song) %>
 </div>
 
 <div>
